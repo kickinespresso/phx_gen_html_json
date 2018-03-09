@@ -6,7 +6,7 @@
 ## Generators
 
     mix phx.gen.html Blog Post posts title:string content:string
-    mix phx.gen.json Blog Post posts title:string content:string --web Api --no-context and --no-schema
+    mix phx.gen.json Blog Post posts title:string content:string --web Api --no-context --no-schema
 
 ### Other modifications
 
@@ -27,6 +27,13 @@ Modified for the correct route paths:
       ...
       resources "/posts", PostController
     end
+
+Initally, for the project, we used the following command with `and`:
+
+    mix phx.gen.json Blog Post posts title:string content:string --web Api --no-context and --no-schema
+
+This should have been removed and caused some issues with our `PhxGenHtmlJsonWeb.Api.PostControllerTest` test cases. This change reflects what was needed to fix those. 
+
 
 ## Starting
 

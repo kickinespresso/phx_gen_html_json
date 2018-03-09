@@ -13,7 +13,6 @@ defmodule PhxGenHtmlJsonWeb.Api.PostView do
   def render("post.json", %{post: post}) do
     %{id: post.id,
       title: post.title,
-      content: post.content,
-      and: post.and}
+      content: post.content}
   end
 end

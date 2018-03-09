@@ -4,9 +4,9 @@ defmodule PhxGenHtmlJsonWeb.Api.PostControllerTest do
   alias PhxGenHtmlJson.Blog
   alias PhxGenHtmlJson.Blog.Post
 
-  @create_attrs %{and: "some and", content: "some content", title: "some title"}
-  @update_attrs %{and: "some updated and", content: "some updated content", title: "some updated title"}
-  @invalid_attrs %{and: nil, content: nil, title: nil}
+  @create_attrs %{content: "some content", title: "some title"}
+  @update_attrs %{content: "some updated content", title: "some updated title"}
+  @invalid_attrs %{content: nil, title: nil}
 
   def fixture(:post) do
     {:ok, post} = Blog.create_post(@create_attrs)
@@ -32,7 +32,6 @@ defmodule PhxGenHtmlJsonWeb.Api.PostControllerTest do
       conn = get conn, api_post_path(conn, :show, id)
       assert json_response(conn, 200)["data"] == %{
         "id" => id,
-        "and" => "some and",
         "content" => "some content",
         "title" => "some title"}
     end
@@ -53,7 +52,6 @@ defmodule PhxGenHtmlJsonWeb.Api.PostControllerTest do
       conn = get conn, api_post_path(conn, :show, id)
       assert json_response(conn, 200)["data"] == %{
         "id" => id,
-        "and" => "some updated and",
         "content" => "some updated content",
         "title" => "some updated title"}
     end
