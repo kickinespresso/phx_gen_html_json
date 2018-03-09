@@ -32,7 +32,7 @@ Initally, for the project, we used the following command with `and`:
 
     mix phx.gen.json Blog Post posts title:string content:string --web Api --no-context and --no-schema
 
-This should have been removed and caused some issues with our `PhxGenHtmlJsonWeb.Api.PostControllerTest` test cases. This change reflects what was needed to fix those. 
+This should have been removed and caused some issues with our `PhxGenHtmlJsonWeb.Api.PostControllerTest` test cases. The [8739c189b7c2a5d16e8fc9c047bdf65734beaa47](https://github.com/kickinespresso/phx_gen_html_json/commit/8739c189b7c2a5d16e8fc9c047bdf65734beaa47) change reflects what was needed to fix this issue. 
 
 
 ## Starting
