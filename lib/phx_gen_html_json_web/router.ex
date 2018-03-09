@@ -20,8 +20,9 @@ defmodule PhxGenHtmlJsonWeb.Router do
     resources "/posts", PostController
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", PhxGenHtmlJsonWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", PhxGenHtmlJsonWeb.Api, as: :api do
+    pipe_through :api
+
+    resources "/posts", PostController
+  end
 end
